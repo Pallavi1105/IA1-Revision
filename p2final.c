@@ -5,7 +5,7 @@ int input()
   printf("enter the value");
   scanf("%d",&x);
   return x;
-}
+ }
 int cmp(int a, int b, int c)
 {
   if(a>b&&b>c)
