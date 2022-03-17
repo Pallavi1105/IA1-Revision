@@ -5,7 +5,7 @@ int input_n()
   printf("enter the value");
   scanf("%d",&n);
   return n;
-}
+ }
 int sum_n(int n)
 {
   int i,sum=0;
