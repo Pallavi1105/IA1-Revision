@@ -1,0 +1,94 @@
+ gcc -g p8final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x9d3: file p8final.c, line 59.
+(gdb) r
+Starting program: /home/runner/IA1-Revision-6/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p8final.c:59
+59  {
+(gdb) n
+60    int n=get_n();
+(gdb) s
+get_n () at p8final.c:8
+8   {
+(gdb) n
+10    printf("enter the number of complex numbers");
+(gdb) n
+11    scanf("%d",&n);
+(gdb) n
+enter the number of complex numbers2
+12    return n;
+(gdb) n
+13  }
+(gdb) p n
+$1 = 2
+(gdb) n
+main () at p8final.c:61
+61    complex c[n],result;
+(gdb) s
+62    input_n_complex (n,c);
+(gdb) s
+input_n_complex (n=2, c=0x7ffd76d09690) at p8final.c:26
+26    for(i=0;i<n;i++)
+(gdb) n
+27    c[i]=input_complex();
+(gdb) n
+Enter complex number 2+3i 4+5i
+26    for(i=0;i<n;i++)
+(gdb) n
+27    c[i]=input_complex();
+(gdb) n
+26    for(i=0;i<n;i++)
+(gdb) n
+28  }
+(gdb) n
+main () at p8final.c:63
+63    result=add_n_complex(n,c);
+(gdb) s
+add_n_complex (n=2, c=0x7ffd76d09690) at p8final.c:42
+42    r.real=0;
+(gdb) n
+43    r.imaginary=0;
+(gdb) n
+44    for(i=0;i<n;i++)
+(gdb) n
+45    r=add(r,c[i]);
+(gdb) n
+44    for(i=0;i<n;i++)
+(gdb) n
+45    r=add(r,c[i]);
+(gdb) n
+44    for(i=0;i<n;i++)
+(gdb) n
+46    return r;
+(gdb) n
+47  }
+(gdb) p r
+$2 = {real = 4, imaginary = 6}
+(gdb) n
+main () at p8final.c:64
+64    output(n,c,result);
+(gdb) n
+65    return 0;
+(gdb) n
+66  }(gdb) c
+Continuing.
+Enter complex number2.000000 + 3.000000i+2.000000 + 3.000000i is 4.000000 + 6.000000i[Inferior 1 (process 983) exited normally]
+(gdb) 
