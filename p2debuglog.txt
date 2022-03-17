@@ -18,7 +18,7 @@ Reading symbols from a.out...done.
 (gdb) b main
 Breakpoint 1 at 0x7e8: file p2final.c, line 31.
 (gdb) r
-Starting program: /home/runner/IA1-Revision/a.out 
+Starting program: /home/runner/IA1-Revision-6/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
 Breakpoint 1, main () at p2final.c:31
@@ -31,12 +31,12 @@ input () at p2final.c:3
 (gdb) n
 6     scanf("%d",&x);
 (gdb) n
-enter the value2
+enter the value7
 7     return x;
 (gdb) n
-8   }
+8    }
 (gdb) p x
-$1 = 2
+$1 = 7
 (gdb) n
 main () at p2final.c:32
 32    b=input();
@@ -48,12 +48,12 @@ input () at p2final.c:3
 (gdb) n
 6     scanf("%d",&x);
 (gdb) n
-enter the value1
+enter the value6
 7     return x;
 (gdb) n
-8   }
+8    }
 (gdb) p x
-$2 = 1
+$2 = 6
 (gdb) n
 main () at p2final.c:33
 33    c=input();
@@ -65,22 +65,20 @@ input () at p2final.c:3
 (gdb) n
 6     scanf("%d",&x);
 (gdb) n
-enter the value6
+enter the value2
 7     return x;
 (gdb) n
-8   }
+8    }
 (gdb) p x
-$3 = 6
+$3 = 2
 (gdb) n
 main () at p2final.c:34
 34    largest=cmp(a,b,c);
 (gdb) s
-cmp (a=2, b=1, c=6) at p2final.c:11
+cmp (a=7, b=6, c=2) at p2final.c:11
 11    if(a>b&&b>c)
 (gdb) n
-15    else if(b>c)
-(gdb) n
-21      return c;
+13      return a;
 (gdb) n
 23  }
 (gdb) p largest
@@ -89,7 +87,7 @@ No symbol "largest" in current context.
 main () at p2final.c:35
 35    output(a,b,c,largest);
 (gdb) s
-output (a=2, b=1, c=6, largest=6) at p2final.c:26
+output (a=7, b=6, c=2, largest=7) at p2final.c:26
 26     printf("largest of %d,%d,%d is %d",a,b,c,largest);
 (gdb) n
 27   }
@@ -100,5 +98,5 @@ main () at p2final.c:36
 37   }
 (gdb) c
 Continuing.
-largest of 2,1,6 is 6[Inferior 1 (process 585) exited normally]
+largest of 7,6,2 is 7[Inferior 1 (process 840) exited normally]
 (gdb) 
